@@ -1,20 +1,32 @@
 import React from "react";
-import { FlexContainer, FlexItem } from "./components/Easyflex";
-import "./styles/Easyflex.css";
+import { FlexContainer } from "./Easyflex";
 
 function App() {
   return (
-    <FlexContainer className="testing" xaxis="space1" yaxis="bottom">
-      <FlexItem>
-        <div className="custom">1</div>
-      </FlexItem>
-      <FlexItem>
-        <div className="custom">2</div>
-      </FlexItem>
-      <FlexItem>
-        <div className="custom">3</div>
-      </FlexItem>
-    </FlexContainer>
+    <>
+      <FlexContainer
+        className="testContainer"
+        xaxis="left"
+        yaxis="top"
+        column={false}
+      >
+        <FlexContainer
+          className="testItem"
+          xaxis="center"
+          yaxis="bottom"
+          column={false}
+        >
+          1
+        </FlexContainer>
+
+        <FlexContainer className="testItem" xaxis="center" yaxis="center">
+          2
+        </FlexContainer>
+        <FlexContainer className="testItem" xaxis="center" yaxis="center">
+          3
+        </FlexContainer>
+      </FlexContainer>
+    </>
   );
 }
 
