@@ -48,11 +48,6 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
-const setAppIndexJs = () => {
-  if (process.env.NODE_ENV === "development") return "index";
-  if (process.env.NODE_ENV === "production") return "Easyflex";
-};
-
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp(".env"),
@@ -60,7 +55,7 @@ module.exports = {
   appBuild: resolveApp("build"),
   appPublic: resolveApp("public"),
   appHtml: resolveApp("public/index.html"),
-  appIndexJs: resolveModule(resolveApp, `src/${setAppIndexJs()}`),
+  appIndexJs: resolveModule(resolveApp, `src/index`),
   appPackageJson: resolveApp("package.json"),
   appSrc: resolveApp("src"),
   appTsConfig: resolveApp("tsconfig.json"),

@@ -4,6 +4,7 @@ import "./Easyflex.css";
 type Axis = "left" | "center" | "right" | "space1" | "space2";
 
 interface Props {
+  id: string;
   children: JSX.Element;
   wrap: boolean;
   xaxis: Axis;
@@ -32,8 +33,8 @@ interface Props {
  * @param {boolean} column - Boolean: true/false
  * @param {string} className - String: Name of a custom CSS class
  */
-export const FlexContainer = (props: Props) => {
-  const { children, wrap, xaxis, yaxis, column, className } = props;
+export const FlexContainer = (props: Props): JSX.Element => {
+  const { children, wrap, xaxis, yaxis, column, className, id } = props;
 
   const isColumn = () => {
     if (typeof column === "boolean" && column === true) return true;
@@ -59,5 +60,9 @@ export const FlexContainer = (props: Props) => {
 
   const classNames = `easyflex-container ${getPropsClassName()} ${getXaxisClassName()} ${getYaxisClassName()}`;
 
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div id={id} className={classNames}>
+      {children}
+    </div>
+  );
 };

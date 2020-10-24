@@ -6,9 +6,9 @@ function App() {
     <>
       <FlexContainer
         className="testContainer"
-        xaxis="left"
+        xaxis="center"
         yaxis="top"
-        column={false}
+        column={true}
       >
         <FlexContainer
           className="testItem"
