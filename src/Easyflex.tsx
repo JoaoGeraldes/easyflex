@@ -38,7 +38,7 @@ interface Props {
 /**
  * 
  * @example
-    <FlexContainer
+    <Easyflex
         id="flex1"
         className="customCSS"
         xaxis="center"
@@ -49,7 +49,7 @@ interface Props {
         <div>1</div>
         <div>2</div>
         <div>3</div>
-    </FlexContainer>
+    </Easyflex>
  * 
  * @example
  * 
