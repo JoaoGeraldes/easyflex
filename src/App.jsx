@@ -16,7 +16,6 @@ function App() {
         className="testContainer"
         xaxis="center"
         yaxis="top"
-        column={true}
       >
         <Easyflex
           className="testItem"
