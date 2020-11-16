@@ -135,5 +135,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.15"
   }
 }

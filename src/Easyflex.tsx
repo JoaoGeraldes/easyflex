@@ -1,6 +1,23 @@
 import React from "react";
 import "./Easyflex.css";
 
+export const getPropsClassName = (className?: string) => {
+  if (className) return className;
+  else return "defaultFlexContainerSize";
+};
+
+export const getXaxisClassName = (isColumn?: boolean, xaxis?: Axis) => {
+  return isColumn
+    ? `easyflex-column column-easyflex-xaxis-${xaxis || "center"} `
+    : ` row-easyflex-xaxis-${xaxis || "center"} `;
+};
+
+export const getYaxisClassName = (isColumn?: boolean, yaxis?: Axis) => {
+  return isColumn
+    ? `easyflex-column column-easyflex-yaxis-${yaxis || "center"} `
+    : ` row-easyflex-yaxis-${yaxis || "center"} `;
+};
+
 /*
 
 ||
@@ -31,7 +48,7 @@ interface Props {
   xaxis: Axis;
   yaxis: Axis;
   column?: boolean;
-  className?: string;
+  className?: string | undefined;
   style?: object;
 }
 
@@ -76,29 +93,9 @@ interface Props {
 export const Easyflex = (props: Props): JSX.Element => {
   const { children, wrap, xaxis, yaxis, column, className, id, style } = props;
 
-  const isColumn = () => {
-    if (typeof column === "boolean" && column === true) return true;
-    else return false;
-  };
-
-  const getPropsClassName = () => {
-    if (className) return className;
-    else return "defaultFlexContainerSize";
-  };
-
-  const getXaxisClassName = () => {
-    return isColumn()
-      ? `easyflex-column column-easyflex-xaxis-${xaxis} `
-      : ` row-easyflex-xaxis-${xaxis} `;
-  };
-
-  const getYaxisClassName = () => {
-    return isColumn()
-      ? `easyflex-column column-easyflex-yaxis-${yaxis} `
-      : ` row-easyflex-yaxis-${yaxis} `;
-  };
-
-  const classNames = `easyflex-container ${getPropsClassName()} ${getXaxisClassName()} ${getYaxisClassName()}`;
+  const classNames = `easyflex-container ${getPropsClassName(
+    className
+  )} ${getXaxisClassName(column, xaxis)} ${getYaxisClassName(column, yaxis)}`;
 
   return (
     <div style={style} id={id} className={classNames}>
