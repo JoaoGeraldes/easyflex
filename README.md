@@ -12,7 +12,7 @@ npm install
 
 ## Basic usage
 
-```
+```jsx
 <Easyflex
         id="flex1"
         className="customCSS"
@@ -28,7 +28,7 @@ npm install
 You can also nest Easyflex within Easyflex...
 
 ## Example of nesting
-```
+```jsx
 <Easyflex
   id="testFlex"
   className="testContainer"
